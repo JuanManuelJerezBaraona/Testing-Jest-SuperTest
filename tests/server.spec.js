@@ -31,4 +31,15 @@ describe("Operaciones CRUD de cafes", () => {
         expect(response.status).toBe(201);
     });
 
+    it("Prueba que la ruta PUT /cafes devuelve un status code 400 si intentas actualizar un café enviando un id en los parámetros que sea diferente al id dentro del payload", async () => {
+        const payload = {
+            id: faker.number.int({ min: 5, max: 100 }),
+            nombre: faker.commerce.productName()
+        };
+
+        let fakeID = faker.number.int({ min: 101, max: 200 })
+
+        const response = await request(app).put(`/cafes/${fakeID}`).send(payload);
+        expect(response.status).toBe(400);
+    });
 });
