@@ -4,7 +4,7 @@ const app = require("../index");
 const { faker } = require('@faker-js/faker');
 const generateJWT = require("./generate.jwt");
 
-describe("CRUD operations for coffees", () => {
+describe("CRUD operations for /cafes", () => {
 
     it("GET /cafes should return status code 200 and an array with at least 1 object", async () => {
         const response = await request(app).get("/cafes").send();
