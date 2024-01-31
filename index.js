@@ -1,18 +1,18 @@
-﻿const express = require('express');
+﻿// Imports
+const express = require('express');
 const cors = require('cors');
 
 const coffees = require("./cafes.json");
 
+// Server
+const app = express(); // Create an express application
+app.listen(3000, console.log("✅ Server ON")); // Start the server on port 3000
 
-const app = express();
-app.listen(3000, console.log("✅ Server ON"));
+app.use(express.json()); // Use express.json() middleware to parse incoming JSON requests into JavaScript objects
+app.use(cors()); // Use cors() middleware to enable CORS (Cross-Origin Resource Sharing)
 
 
-app.use(express.json());
-app.use(cors());
-
-
-// Rutas
+// Routes + Controllers
 app.get("/cafes", (req, res) => {
     res.status(200).send(coffees)
 })
