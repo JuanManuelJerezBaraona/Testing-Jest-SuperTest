@@ -1,7 +1,7 @@
 {
   "name": "la-cafeteria-nanacao",
   "version": "1.0.0",
-  "description": "Test Unitarios a una API REST con JEST y SuperTest",
+  "description": "Unit tests for a REST API with JEST and SuperTest",
   "main": "index.js",
   "scripts": {
     "test": "jest --forceExit",
