@@ -2,7 +2,7 @@ const request = require("supertest");
 const app = require("../index");
 
 const { faker } = require('@faker-js/faker');
-const generateJWT = require("./generate.jwt");
+const generateJWT = require('../helpers/generate.jwt');
 
 describe("Read operations for /cafes", () => {
 
